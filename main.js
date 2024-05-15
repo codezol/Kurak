@@ -10,14 +10,14 @@ let data = [
   {
     id: 2,
     title:
-      "2- What is the base color for the app that you think is approprate ?",
+      "2- What is the best color for the app that you think is approprate?",
     op1: "Darkgreen",
     op2: "Darkred",
     op3: "Darkblue",
   },
   {
     id: 3,
-    title: "3-Are you sudanese",
+    title: "3- Are you sudanese",
     op1: "yes",
     op2: "no",
     op3: "other",
@@ -105,7 +105,7 @@ radiobtn3.forEach((radiobtn) => {
   radiobtn.addEventListener("change", () => Choese(3));
 });
 
-function sumbit() {
+function submit() {
   if (Answers.Q1 == "" || Answers.Q2 == "" || Answers.Q3 == "") {
     alert("all is Requerd");
     return;
@@ -114,8 +114,13 @@ function sumbit() {
   SendData();
 }
 
+const submit_btn = document.querySelector('button.submit')
+submit_btn.addEventListener('click', (e) => {
+  e.preventDefault()
+  submit()
+})
 function SendData() {
-  document.querySelector(".sumbit").style.display = "none";
+  document.querySelector(".submit").style.display = "none";
   document.querySelector(
     ".servey-data"
   ).innerHTML = `<h2 class="center" >Sending ...</h2>`;
